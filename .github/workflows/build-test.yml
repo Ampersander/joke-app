@@ -30,7 +30,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: ampersander/joke_app
-          
+
       - name: Login to DockerHub
         uses: docker/login-action@v2
         with:
@@ -42,16 +42,16 @@ jobs:
         with:
           context: .
 
-deploy:
-    runs-on: ubuntu-latest
+  deploy:
+      runs-on: ubuntu-latest
 
-    needs: build-test
-    
-    steps:
-      - uses: actions/checkout@v3
+      needs: build-test
+      
+      steps:
+        - uses: actions/checkout@v3
 
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "joke-app-esgi" #Must be unique in Heroku
-          heroku_email: "romain-b49460@hotmail.com"
+        - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+          with:
+            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+            heroku_app_name: "joke-app-esgi" #Must be unique in Heroku
+            heroku_email: "romain-b49460@hotmail.com"
