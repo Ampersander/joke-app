@@ -1,0 +1,8 @@
+version: "3"
+services:
+  my-service:
+    image: ampersander/joke_app:latest
+    container_name: 'joke_app'
+    restart: always
+    ports:
+      - 3000:3000
