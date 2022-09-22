@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
     "npm": {
         "release": false
@@ -9,26 +8,4 @@
     "hooks": {
         "after:bump": "npx auto-changelog -p"
     }
-=======
-{
-    "npm": {
-        "publish": false
-    },
-    "git": {
-        "changelog": "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
-    },
-    "hooks": {
-        "after:bump": "npx auto-changelog -p"
-    },
-    "plugins": {
-        "@release-it/bumper": {
-            "in": "version.yml",
-            "out": "version.yml"
-        },
-        "@release-it/conventional-changelog": {
-            "preset": "angular",
-            "infile": "CHANGELOG-bis.md"
-        }
-    }
->>>>>>> a5868b2a54ec50095aa6c873a92b7cc5069d039d
 }
